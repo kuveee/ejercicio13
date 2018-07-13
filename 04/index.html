@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+	<title>Ejercicio 04</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <button class="add_name">+</button>
+  <ul class="names"></ul>
+
+
+<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous">
+
+</script>
+<script>
+	
+	$(".add_name").on('click', function(event){
+		var data = prompt('Por favor agrega un nombre a la lista', 'Harry Potter')
+	$(".names").append('<li><span>'+ data +'</span><a href="#" class="remove_name">x</a></li>')
+	$("a[href='#']").on("click", function(event){
+		event.preventDefault();
+		});
+	$(".remove_name").on('click', function(){
+		$(this).parent().remove();
+	});
+});	
+</script>
+
+</body>
+</html>
